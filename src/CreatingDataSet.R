@@ -135,8 +135,8 @@ card_by_mo <- df_long_comb %>%
 card_by_mo$imgs_joined %>%
   image_join() %>%
   image_append() %>%
-  image_background(color="white") %>%
-  image_channel(channel="Gray")
+  image_background(color="gray24") %>%
+  image_write("output/Hanafuda_by_Mo.png")
 
 
 card_by_type <- df_long_comb %>%
