@@ -6,3 +6,6 @@
 
 Shuffled Deck
 ![Shuffled Desk](output/ShuffledHanafuda.png)
+
+Arranged By Points
+![Arranged By Card Type](output/ArrangedByPoints.png)

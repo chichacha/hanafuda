@@ -150,4 +150,17 @@ map2(shuffle_art$img_lst, shuffle_art$n,  ~image_read_svg(.x, width=2400/.y) %>%
 
 
 
+df_long_comb %>%
+  group_by(card_type) %>%
+  summarise(n=n(),
+            img_list=list(img_svg)) %>%
+  mutate(img_row = map2(img_list, n, ~image_read_svg(.x, width=2400/.y) %>%
+                          image_append(stack=F))) -> tmp
+
+tmp$img_row %>% image_join() %>%
+  image_append(stack=T) %>%
+  image_background(color="gray24")%>%
+  image_write("output/ArrangedByPoints.png")
+  
+
 
